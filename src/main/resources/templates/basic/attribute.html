@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>속성 설정</h1>
+<input type="text" name="mock" th:name="userA" />
+
+<h1>속성 추가</h1>
+- th:attrappend = <input type="text" class="text" th:attrappend="class=' large'" /><br/>
+<!--뒤에 붙임-->
+- th:attrprepend = <input type="text" class="text" th:attrprepend="class='large '" /><br/>
+<!--앞에 붙임-->
+- th:classappend = <input type="text" class="text" th:classappend="large" /><br/>
+<!--알아서 적절히 붙임-->
+
+<h1>checked 처리</h1>
+- checked o <input type="checkbox" name="active" th:checked="true" /><br/>
+<!--  실 사용은 th:checked="${result}" 또는 th:checked="${isChecked}"이런식으로 될것이다.-->
+- checked x <input type="checkbox" name="active" th:checked="false" /><br/>
+- checked=false <input type="checkbox" name="active" checked="false" /><br/>
+<!--타임리프 렌더링 하지않고 HTML로 열어보면 체크박스타입에 네임을 엑티브로했을시 checked가 존재한다면 checked를 false로 해도 html은 체크박스에 자동으로 체크를한다.-->
+</body>
+</html>
