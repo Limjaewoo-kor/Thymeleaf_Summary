@@ -25,5 +25,17 @@
   //객체
   var user = [[${user}]];
 </script>
+
+<!--자바스크립트 인라인은 3가지를 도와준다.-->
+<!--텍스트 렌더링할때 ""찍어주는것.-->
+<!--내추럴템플릿 가능하도록 도와준다.-->
+<!--객체의경우 json으로 출력해준다.-->
+
+<!-- 자바스크립트 인라인 each -->
+<script th:inline="javascript">
+  [# th:each = "user, stat : ${users}"]
+  var user[[${stat.count}]] = [[${user}]];
+  [/]
+</script>
 </body>
 </html>
